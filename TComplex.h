@@ -42,5 +42,5 @@ const TComplex operator*(const TComplex &, const TComplex &);
 const TComplex operator/(const TComplex &, const TComplex &);
 const TComplex power(const TComplex &, unsigned int);
 
-ostream &operator<<(ostream &, const TComplex &);
-istream &operator>>(istream &, TComplex &);
+std::ostream& operator<<(std::ostream &os, const TComplex &num);
+std::istream &operator>>(std::istream &is, TComplex &num);

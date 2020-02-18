@@ -3,6 +3,8 @@
 #include <math.h>
 using namespace std;
 const wchar_t angleSymbol = 0x299F;
+int TComplex::_freeId(0);
+
 TComplex::TComplex(double ro, double phi) : _id(_freeId++), _ro(ro), _phi(phi) {
 #ifndef NDEBUG
   cout << "Created TComplex object using 2 values, id: " << _id << endl;
@@ -84,6 +86,7 @@ const TComplex power(const TComplex &num, unsigned int n) {
 ostream &operator<<(ostream &os, const TComplex &num) {
   os << "TComplex object with ID: " << num.getId() << ", {" << num.getMod()
      << ", " << num.getArg() << angleSymbol << "}\n";
+  return os;
 }
 
 istream &operator>>(istream &is, TComplex &num) {
@@ -91,4 +94,5 @@ istream &operator>>(istream &is, TComplex &num) {
   is >> num.getModRef();
   cout << "Enter Angle: ";
   is >> num.getArgRef();
+  return is;
 }

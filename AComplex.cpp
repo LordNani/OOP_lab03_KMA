@@ -88,6 +88,14 @@ ostream &operator<<(ostream &os, const AComplex &num) {
   return os;
 }
 
+istream& operator>>(istream& is, AComplex& num) {
+	cout << "Enter real: ";
+	is >> num.getReRef();
+	cout << "Enter imaginary: ";
+	is >> num.getImRef();
+	return is;
+}
+
 const AComplex operator+(const AComplex &a, const AComplex &b) {
   return AComplex(a.getRe() + b.getRe(), a.getIm() + b.getIm());
 }

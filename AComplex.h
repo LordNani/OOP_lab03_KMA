@@ -48,5 +48,5 @@ const AComplex  power(const AComplex&, unsigned int);
 bool operator== (const AComplex&, const AComplex&);
 bool operator!= (const AComplex&, const AComplex&);
 
-ostream& operator<<(ostream &, const AComplex &);
-istream& operator>>(istream&, AComplex&);
+std::ostream& operator<<(std::ostream & os, const AComplex &num);
+std::istream& operator>>(std::istream& is, AComplex&num);
