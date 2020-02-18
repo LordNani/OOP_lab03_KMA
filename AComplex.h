@@ -1,5 +1,8 @@
 // Complex numbers
 // in cartesian (algebraic) form
+#pragma once
+#include <iostream>
+#include "TComplex.h"
 class TComplex;
 class AComplex
 {
@@ -16,11 +19,15 @@ public:
 
 	AComplex& operator= (const AComplex&);
 	
-	double& re();
-	double& im();
+	void setRe(double re_in); //non-ref double to be able to put expressions
+	void setIm(double im_in);
 
-	double re() const;
-	double im() const;
+	double getRe() const;
+	double getIm() const;
+	double& getReRef() { return _re; }
+	double& getImRef() { return _im; }
+
+	int getId() const{ return _id; }
 
 	double mod() const;
 	double arg() const;
@@ -42,4 +49,4 @@ bool operator== (const AComplex&, const AComplex&);
 bool operator!= (const AComplex&, const AComplex&);
 
 ostream& operator<<(ostream &, const AComplex &);
-istream& operator>>(istream &, AComplex&);
+istream& operator>>(istream&, AComplex&);

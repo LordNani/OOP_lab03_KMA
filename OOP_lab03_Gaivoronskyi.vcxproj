@@ -123,6 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AComplex.h" />
+    <ClInclude Include="TComplex.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AComplex.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="TComplex.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
