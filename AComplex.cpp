@@ -1,7 +1,7 @@
 #pragma once
 #include "AComplex.h"
 #include <math.h>
-
+#define NDEBUG
 int AComplex::_freeId(0);
 using namespace std;
 

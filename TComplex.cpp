@@ -1,8 +1,8 @@
 
 #include "TComplex.h"
 #include <math.h>
+#define NDEBUG
 using namespace std;
-const wchar_t angleSymbol = 0x299F;
 int TComplex::_freeId(0);
 
 TComplex::TComplex(double ro, double phi) : _id(_freeId++), _ro(ro), _phi(phi) {
@@ -13,7 +13,7 @@ TComplex::TComplex(double ro, double phi) : _id(_freeId++), _ro(ro), _phi(phi) {
 
 TComplex::TComplex(const AComplex &num) : _id(_freeId++) {
   _ro = num.mod();
-  _phi = num.mod() * sin(num.arg());
+  _phi = num.arg();
 #ifndef NDEBUG
   cout << "Created TComplex object using Acomplex object, id: " << _id << endl;
 #endif // !NDEBUG
@@ -84,8 +84,8 @@ const TComplex power(const TComplex &num, unsigned int n) {
 }
 
 ostream &operator<<(ostream &os, const TComplex &num) {
-  os << "TComplex object with ID: " << num.getId() << ", {" << num.getMod()
-     << ", " << num.getArg() << angleSymbol << "}\n";
+  os << "TComplex object with ID: " << num.getId() << ", {Z = " << num.getMod()
+     << ",Angle = " << num.getArg() << "}\n";
   return os;
 }
 
